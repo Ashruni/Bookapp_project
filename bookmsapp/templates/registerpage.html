@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://kit.fontawesome.com/844fd7bfe8.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<style>
+    #h{
+
+    }
+    #g{
+        margin-left:200px;
+    }
+    body {
+        background-image: url("https://images.pexels.com/photos/1419923/pexels-photo-1419923.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      {% static 'bookmsapp/images/loginbackground.jpeg' %}
+</style>
+<body>
+    <div style="height:350px;width:399px;background-color:rgb(255, 255, 255);border:2px;margin-left:430px;margin-top:100px;border-radius:10px;">
+
+           <table style="margin-top:-70px; margin-left:40px;font-style:italic;color:rgba(62, 34, 14, 0.822);">
+       <form method="post">{% csrf_token %}
+               <tr id="g">
+        <th >
+             <label >Username</label>
+    <td id="h"><input type="text" placeholder="Enter your Username" name="username"></td></th></tr><br>
+    <tr>
+        <th >
+             <label >First Name</label>
+             <td id="h"><input type="text" placeholder="Enter your First Name" name="first_name"></td><br></th></tr>
+        <tr>
+            <th > <label >Second Name</label>
+                <td id="h"><input type="text" placeholder="Enter your Second Name" name="last_name"></td><br></th></tr>
+        <tr>
+            <th > <label >Email id</label>
+                <td id="h"><input type="email" placeholder="Enter your Email id" name="email"></td><br></th></tr>
+         <tr>
+            <th > <label >Set Password</label>
+                <td id="h"> <input type="password" placeholder="Enter your password" name="password"></td></th><br></tr>
+            <th>
+                <tr>
+                   <td id="h"></td><th id="h"> <input type="submit" class="btn-btn-primary" ></td></th></tr>
+</form>
+           </table>
+    </div>
+
+
+</body>
+</html>

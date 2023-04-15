@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+<!--    #f{-->
+<!--    margin-left:90px;-->
+<!--    }-->
+#upload{
+margin-top:0px;
+}
+#display{
+margin-left:70px;
+}
+    </style>
+</head>
+<body style="background-color:rgb(247, 239, 162);">
+ <nav  class="navbar navbar-expand {-sm|-md|-lg|-xl|-xxl} " >
+     <a style="text-decoration:none;" href="http://127.0.0.1:8000/bookmsapp/profile1/"><h3>Back home</h3></a>
+<div id="upload">
+    <h3 style="margin-left:530px;margin-top:30px;">ADD A NEW BOOK </h3>
+    <table style="height:250px;width:350px;margin-top:-60px;  background-color:rgb(249, 228, 210);margin-left:450px;border-radius:10px;">
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+    <tr ><th ><label>Book Name </label></th>
+        <td ><input  type="text" name="bookname" ></td><br></tr>
+    <tr><th><label>Book PDF</label></th>
+        <td><input type="file" name="bookpdf"></td><br></tr>
+    <tr><th><label>Book Author</label></th>
+        <td><input type="text" name="bookauthor"></td><br></tr>
+   <tr> <th><label>Book Image</label></th>
+       <td><input type="file" name="bookimage"></td><br></tr>
+    <tr><th><input type="submit" value="Submit" class="btn-btn-primary"></tr></th>
+
+</form>
+    </table>
+</div><br><br>
+<div id="display">
+    <h3 style="margin-left:480px;margin-top:10px;">BOOK DETAILS </h3>
+<table style="margin-left:325px;background-color:rgb(249, 228, 210);margin-top:60px;" border="2px" width="400px;" >
+<tr >
+    <tr>
+        <th>Book Name</th>
+        <th >Book PDF</th>
+        <th>Author</th>
+        <th>Date</th>
+        <th>Image</th>
+    <th>Make changes</th>
+
+    </tr>
+    {% for i,j,k,l,m,n in mylist %}<tr>
+    <td>{{i}}</td>
+     <td><a href='{% static bpdf %}'>{{j}}</a></td>
+    <td>{{m}}</td>
+    <td>{{l}}</td>
+    <td><img  src='{% static k %}'  height="116px" width="100px"></td><br>
+
+
+
+
+
+
+    <td ><a style="text-decoration:none;" href="http://127.0.0.1:8000/bookmsapp/delete/{{n}}">Delete your Post</a><br><br><a style="text-decoration:none;" href="http://127.0.0.1:8000/bookmsapp/editbook/{{n}}">Edit your Post</a></td>
+<!--    <td></td>-->
+<!--http://127.0.0.1:8000/classapp/{{n}}-->
+{% endfor %}
+</table>
+
+
+
+</div>
+ </nav>
+</body>
+</html>

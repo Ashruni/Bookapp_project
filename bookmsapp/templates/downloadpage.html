@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+<!--    #f{-->
+<!--    margin-left:90px;-->
+<!--    }-->
+#upload{
+margin-top:0px;
+}
+#display{
+margin-left:70px;
+}
+    </style>
+</head>
+<body style="background-color:rgb(231, 243, 242);">
+ <nav  class="navbar navbar-expand {-sm|-md|-lg|-xl|-xxl} " >
+     <a style="text-decoration:none;" href="http://127.0.0.1:8000/bookmsapp/profile1/"><h3>Back home</h3></a>
+<!--    <h3 style="margin-left:480px;margin-top:10px;" >BOOKS </h3>-->
+<table style="margin-left:325px;background-color:rgb(231, 243, 242);margin-top:-60px;" border="2px" width="400px;" >
+<tr >
+    <tr>
+        <th>Book Name</th>
+        <th >Click here to Download</th>
+
+
+    </tr>
+    {% for i,j in mylist %}<tr>
+    <td>{{i}}</td>
+    <td><a href="{% static j %}" download>click here to download</a></td>
+
+{% endfor %}
+</table>
+
+
+
+</div>
+ </nav>
+</body>
+</html>
